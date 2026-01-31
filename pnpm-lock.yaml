@@ -3585,7 +3585,7 @@ packages:
       '@types/babel__core': 7.20.5
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 27.5.1_@babel+core@7.28.6
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.11
       slash: 3.0.0
     dev: false

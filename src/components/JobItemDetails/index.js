@@ -30,6 +30,7 @@ class JobItemDetails extends Component {
     this.getJobItemDetails()
   }
 
+  /* eslint-disable class-methods-use-this */
   getCamelCasedData = data => {
     const jobDetails = data.job_details
 
@@ -65,6 +66,7 @@ class JobItemDetails extends Component {
     return {updatedJobDetails, similarJobs}
   }
 
+  /* eslint-disable class-methods-use-this */
   getJobItemDetails = async () => {
     this.setState({jobDetailsApiStatus: apiStatusConstants.inProgress})
     const {match} = this.props
@@ -96,25 +98,25 @@ class JobItemDetails extends Component {
   }
 
   renderLoaderView = () => (
-    <div className='jobs-loader-container' data-testid='loader'>
-      <Loader type='ThreeDots' color='#ffffff' height='50' width='50' />
+    <div className="jobs-loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
   renderApiFailureView = () => (
-    <div className='jobs-api-failure-container'>
+    <div className="jobs-api-failure-container">
       <img
-        src='https://assets.ccbp.in/frontend/react-js/failure-img.png'
-        alt='failure view'
-        className='job-api-failure-image'
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="job-api-failure-image"
       />
-      <h1 className='failure-view-heading'>Oops! Something Went Wrong</h1>
-      <p className='failure-view-description'>
+      <h1 className="failure-view-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-view-description">
         We cannot seem to find the page you are looking for.
       </p>
       <button
-        type='button'
-        className='retry-button'
+        type="button"
+        className="retry-button"
         onClick={() => this.getJobItemDetails()}
       >
         Retry
@@ -138,67 +140,67 @@ class JobItemDetails extends Component {
     } = jobDetails
 
     return (
-      <div className='job-details-content-container'>
-        <div className='job-details'>
-          <div className='logo-title-container-card'>
+      <div className="job-details-content-container">
+        <div className="job-details">
+          <div className="logo-title-container-card">
             <img
               src={companyLogoUrl}
-              alt='job details company logo'
-              className='company-logo-card'
+              alt="job details company logo"
+              className="company-logo-card"
             />
-            <div className='title-rating-container-card'>
-              <h1 className='job-title-card'>{title}</h1>
-              <div className='rating-container-card'>
-                <AiFillStar className='star-icon-card' />
-                <p className='rating-number-card'>{rating}</p>
+            <div className="title-rating-container-card">
+              <h1 className="job-title-card">{title}</h1>
+              <div className="rating-container-card">
+                <AiFillStar className="star-icon-card" />
+                <p className="rating-number-card">{rating}</p>
               </div>
             </div>
           </div>
-          <div className='location-package-container-card'>
-            <div className='icon-type-container-card'>
-              <IoLocationSharp className='type-icon' />
-              <p className='type-text'>{location}</p>
+          <div className="location-package-container-card">
+            <div className="icon-type-container-card">
+              <IoLocationSharp className="type-icon" />
+              <p className="type-text">{location}</p>
             </div>
-            <div className='icon-type-container-card'>
-              <BsFillBriefcaseFill className='type-icon' />
-              <p className='type-text'>{employmentType}</p>
+            <div className="icon-type-container-card">
+              <BsFillBriefcaseFill className="type-icon" />
+              <p className="type-text">{employmentType}</p>
             </div>
-            <p className='package-text'>{packagePerAnnum}</p>
+            <p className="package-text">{packagePerAnnum}</p>
           </div>
 
-          <hr className='separator' />
-          <div className='description-visit-link-container'>
-            <h1 className='description-heading-card'>Description</h1>
-            <a href={companyWebsiteUrl} className='company-link'>
+          <hr className="separator" />
+          <div className="description-visit-link-container">
+            <h1 className="description-heading-card">Description</h1>
+            <a href={companyWebsiteUrl} className="company-link">
               Visit
-              <FiExternalLink className='external-link-logo' />
+              <FiExternalLink className="external-link-logo" />
             </a>
           </div>
-          <p className='job-description-card'>{jobDescription}</p>
-          <h1 className='skills-heading'>Skills</h1>
-          <ul className='skills-list'>
+          <p className="job-description-card">{jobDescription}</p>
+          <h1 className="skills-heading">Skills</h1>
+          <ul className="skills-list">
             {skills.map(eachSkill => {
               const {imageUrl, name} = eachSkill
               return (
-                <li className='skill-item' key={name}>
-                  <img src={imageUrl} alt={name} className='skill-image' />
-                  <p className='skill-name'>{name}</p>
+                <li className="skill-item" key={name}>
+                  <img src={imageUrl} alt={name} className="skill-image" />
+                  <p className="skill-name">{name}</p>
                 </li>
               )
             })}
           </ul>
-          <h1 className='life-at-company-heading'>Life at Company</h1>
-          <div className='company-life-container'>
-            <p className='life-description'>{lifeAtCompnay.description}</p>
+          <h1 className="life-at-company-heading">Life at Company</h1>
+          <div className="company-life-container">
+            <p className="life-description">{lifeAtCompnay.description}</p>
             <img
-              className='life-image'
+              className="life-image"
               src={lifeAtCompnay.imageUrl}
-              alt='life at company'
+              alt="life at company"
             />
           </div>
         </div>
-        <h1 className='similar-jobs-heading'>Similar Jobs</h1>
-        <ul className='similar-jobs-list'>
+        <h1 className="similar-jobs-heading">Similar Jobs</h1>
+        <ul className="similar-jobs-list">
           {similarJobs.map(eachJob => (
             <SimilarJobCard key={eachJob.id} jobDetails={eachJob} />
           ))}
@@ -223,7 +225,7 @@ class JobItemDetails extends Component {
 
   render() {
     return (
-      <div className='job-details-page'>
+      <div className="job-details-page">
         <Header />
         {this.renderJobDetailsPage()}
       </div>

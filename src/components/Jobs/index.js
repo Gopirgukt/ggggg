@@ -163,6 +163,7 @@ class Jobs extends Component {
     )
   }
 
+  /* eslint-disable class-methods-use-this */
   renderNoJobsView = () => (
     <div className="no-jobs-container">
       <img
